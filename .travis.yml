@@ -35,5 +35,5 @@ install:
     python-gnupg
 script:
 - pushd ..
-- git clone -b test-binary-string https://github.com/naman1996/arrow
+- git clone -b test-both-func https://github.com/naman1996/arrow
 - python arrow/dev/tasks/crossbow.py --queue-path $TRAVIS_BUILD_DIR --queue-remote https://github.com/$TRAVIS_REPO_SLUG submit --job-prefix nightly -g gandiva
