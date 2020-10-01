@@ -1,0 +1,27 @@
+!Job
+target: !Target
+  head: 3ccf0a984759f108f4ad814e07eca5cad6870355
+  email: travis@example.org
+  branch: new-test-both-func
+  remote: https://github.com/naman1996/arrow
+  version: 0.18.0.dev521
+  no_rc_version: 0.18.0.dev521
+  no_rc_semver_version: 0.18.0-dev521
+tasks:
+  gandiva-jar-osx: !Task
+    ci: travis
+    template: gandiva-jars/travis.osx.yml
+    artifacts:
+    - arrow-gandiva-0.18.0.dev521-SNAPSHOT.jar
+    params: {}
+    branch: nightly-762-travis-gandiva-jar-osx
+    commit: 5aa20a34d730093cc0d85a1dde18c24b32d9a4bf
+  gandiva-jar-xenial: !Task
+    ci: travis
+    template: gandiva-jars/travis.linux.yml
+    artifacts:
+    - arrow-gandiva-0.18.0.dev521-SNAPSHOT.jar
+    params: {}
+    branch: nightly-762-travis-gandiva-jar-xenial
+    commit: 75e48cd8ae5e6008a46b88821bebb61c572918aa
+branch: nightly-762
